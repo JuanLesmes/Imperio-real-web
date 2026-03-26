@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Imperio Real Web
 
-## Getting Started
+Sitio web corporativo para **Imperio Real**, una marca orientada a servicios **inmobiliarios** y **jurídicos**.  
+Este proyecto busca ofrecer una presencia digital profesional, clara y confiable, facilitando la presentación de servicios y el contacto con potenciales clientes.
 
-First, run the development server:
+## Objetivo del proyecto
+
+Desarrollar una plataforma web moderna que permita:
+
+- Mostrar los servicios de la empresa
+- Fortalecer la imagen de marca
+- Generar confianza en clientes potenciales
+- Facilitar el contacto comercial
+- Escalar en el futuro hacia funcionalidades más completas
+
+## Estado del proyecto
+
+En planificación / desarrollo inicial.
+
+## Alcance inicial
+
+En una primera fase, el proyecto estará orientado al frontend e incluirá:
+
+- Página de inicio
+- Sección de servicios inmobiliarios
+- Sección de servicios jurídicos
+- Página “Nosotros”
+- Formulario de contacto
+- Diseño responsivo
+- Identidad visual profesional
+
+## Posibles funcionalidades futuras
+
+- Panel administrativo
+- Backend para gestión de propiedades
+- Base de datos
+- Agenda de citas
+- Integración con correo o WhatsApp
+- Blog o sección de novedades
+- Gestión de clientes y consultas
+
+## Tecnologías
+
+> Pendiente de definición
+
+Posibles opciones:
+- Frontend: Angular / React / Next.js
+- Backend: Spring Boot / Node.js
+- Base de datos: PostgreSQL / MySQL
+
+## Requisitos
+
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
+
+- Git
+- Node.js
+- npm
+
+## Instalación
+
+Clona este repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/TU-USUARIO/imperio-real-web.git
