@@ -4,11 +4,13 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shadcn - Landing template",
-  description: "Landing template from Shadcn",
+  title: "Imperio Real | Servicios inmobiliarios y jurídicos",
+  description:
+    "Imperio Real ofrece acompañamiento profesional en servicios inmobiliarios y jurídicos, con atención cercana, estratégica y confiable.",
 };
 
 export default function RootLayout({
@@ -17,16 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background", inter.className)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
-
           {children}
         </ThemeProvider>
       </body>

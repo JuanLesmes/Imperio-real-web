@@ -1,243 +1,117 @@
-import GithubIcon from "@/components/icons/github-icon";
-import LinkedInIcon from "@/components/icons/linkedin-icon";
-import XIcon from "@/components/icons/x-icon";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Building2, Mail, Scale, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-interface TeamProps {
-  imageUrl: string;
-  firstName: string;
-  lastName: string;
-  positions: string[];
-  socialNetworks: SocialNetworkProps[];
-}
-interface SocialNetworkProps {
-  name: string;
-  url: string;
-}
+
 export const TeamSection = () => {
-  const teamList: TeamProps[] = [
-    {
-      imageUrl: "https://i.pravatar.cc/250?img=58",
-      firstName: "Leo",
-      lastName: "Miranda",
-      positions: ["Vue Fronted Developer", "Creator Of This Website"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
-        {
-          name: "X",
-          url: "https://x.com/leo_mirand4",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "Elizabeth",
-      lastName: "Moore",
-      positions: ["UI/UX Designer"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "X",
-          url: "https://x.com/leo_mirand4",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "David",
-      lastName: "Diaz",
-      positions: ["Machine Learning Engineer", "TensorFlow Tinkerer"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "Sarah",
-      lastName: "Robinson",
-      positions: ["Cloud Native Developer", " Kubernetes Orchestrator"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
-        {
-          name: "X",
-          url: "https://x.com/leo_mirand4",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1616805765352-beedbad46b2a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "Michael",
-      lastName: "Holland",
-      positions: ["DevOps Engineer", "CI/CD Pipeline Mastermind"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "Zoe",
-      lastName: "Garcia",
-      positions: ["JavaScript Evangelist", "Deno Champion"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "Evan",
-      lastName: "James",
-      positions: ["Backend Developer"],
-      socialNetworks: [
-        {
-          name: "LinkedIn",
-          url: "https://www.linkedin.com/in/leopoldo-miranda/",
-        },
-        {
-          name: "Github",
-          url: "https://github.com/leoMirandaa",
-        },
-        {
-          name: "X",
-          url: "https://x.com/leo_mirand4",
-        },
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      firstName: "Pam",
-      lastName: "Taylor",
-      positions: ["Fullstack Developer", "UX Researcher"],
-      socialNetworks: [
-        {
-          name: "X",
-          url: "https://x.com/leo_mirand4",
-        },
-      ],
-    },
-  ];
-  const socialIcon = (socialName: string) => {
-    switch (socialName) {
-      case "LinkedIn":
-        return <LinkedInIcon />;
-      case "Github":
-        return <GithubIcon />;
-      case "X":
-        return <XIcon />;
-    }
-  };
-
   return (
-    <section id="team" className="container lg:w-[75%] py-24 sm:py-32">
-      <div className="text-center mb-8">
-        <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-          Team
-        </h2>
+    <section id="profesional" className="container py-24 sm:py-32">
+      <div className="grid lg:grid-cols-2 gap-12 items-center lg:w-[85%] mx-auto">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl"></div>
 
-        <h2 className="text-3xl md:text-4xl text-center font-bold">
-          The Company Dream Team
-        </h2>
-      </div>
+          <div className="relative overflow-hidden rounded-3xl border border-primary/15 shadow-xl bg-card">
+            {/*<Image
+              src="/duena-inmobiliaria.jpg"
+              alt="Directora de Imperio Real"
+              width={900}
+              height={1100}
+              className="w-full h-auto object-cover"
+              priority
+            />*/}
+          </div>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {teamList.map(
-          (
-            { imageUrl, firstName, lastName, positions, socialNetworks },
-            index
-          ) => (
-            <Card
-              key={index}
-              className="bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg"
+        <div className="space-y-6">
+          <Badge variant="outline" className="border-primary/20 text-primary">
+            Dirección y liderazgo
+          </Badge>
+
+          <div className="space-y-3">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+              Conoce a la persona detrás de
+              <span className="text-transparent px-2 bg-gradient-to-r from-[#6E1F2A] to-[#C8A15A] bg-clip-text">
+                Imperio Real
+              </span>
+            </h2>
+
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Nuestra directora lidera este proyecto con una visión enfocada en
+              la confianza, la atención cercana y el acompañamiento profesional
+              en procesos inmobiliarios y jurídicos.
+            </p>
+          </div>
+
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Su experiencia y compromiso permiten brindar a cada cliente una
+              orientación clara, estratégica y humana, entendiendo que detrás de
+              cada trámite, negocio o consulta existen decisiones importantes.
+            </p>
+
+            <p>
+              En Imperio Real buscamos que cada persona se sienta respaldada
+              desde el primer contacto, con una atención seria, elegante y
+              enfocada en generar tranquilidad y resultados.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4 pt-2">
+            <div className="rounded-2xl border border-primary/10 bg-card p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <Building2 className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Enfoque inmobiliario</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Acompañamiento cercano en procesos relacionados con bienes
+                raíces, negociación y orientación comercial.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-primary/10 bg-card p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <Scale className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Respaldo jurídico</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Visión profesional para revisar, orientar y dar mayor seguridad
+                a decisiones legales importantes.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-primary/10 bg-card p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Confianza y seriedad</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Atención con criterio, responsabilidad y una imagen profesional
+                alineada con la marca.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-primary/10 bg-card p-4">
+              <div className="flex items-center gap-3 mb-2">
+                <Mail className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Atención personalizada</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Cada caso se aborda con escucha, claridad y acompañamiento
+                adaptado a la necesidad del cliente.
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-4">
+            <Button
+              asChild
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              <CardHeader className="p-0 gap-0">
-                <div className="h-full overflow-hidden">
-                  <Image
-                    src={imageUrl}
-                    alt=""
-                    width={300}
-                    height={300}
-                    className="w-full aspect-square object-cover saturate-0 transition-all duration-200 ease-linear size-full group-hover/hoverimg:saturate-100 group-hover/hoverimg:scale-[1.01]"
-                  />
-                </div>
-                <CardTitle className="py-6 pb-4 px-6">
-                  {firstName}
-                  <span className="text-primary ml-2">{lastName}</span>
-                </CardTitle>
-              </CardHeader>
-              {positions.map((position, index) => (
-                <CardContent
-                  key={index}
-                  className={`pb-0 text-muted-foreground ${
-                    index === positions.length - 1 && "pb-6"
-                  }`}
-                >
-                  {position}
-                  {index < positions.length - 1 && <span>,</span>}
-                </CardContent>
-              ))}
-
-              <CardFooter className="space-x-4 mt-auto">
-                {socialNetworks.map(({ name, url }, index) => (
-                  <Link
-                    key={index}
-                    href={url}
-                    target="_blank"
-                    className="hover:opacity-80 transition-all"
-                  >
-                    {socialIcon(name)}
-                  </Link>
-                ))}
-              </CardFooter>
-            </Card>
-          )
-        )}
+              <Link href="#contacto">Hablar con nosotros</Link>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
