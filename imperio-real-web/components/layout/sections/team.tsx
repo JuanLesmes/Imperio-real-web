@@ -1,116 +1,122 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Building2, Mail, Scale, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+
+
+const highlights = [
+  {
+    title: "Enfoque inmobiliario",
+    description:
+      "Acompañamiento cercano en procesos relacionados con bienes raíces, negociación y orientación comercial.",
+    icon: <Building2 className="h-5 w-5 text-primary" />,
+  },
+  {
+    title: "Respaldo jurídico",
+    description:
+      "Visión profesional para revisar, orientar y dar mayor seguridad a decisiones legales importantes.",
+    icon: <Scale className="h-5 w-5 text-primary" />,
+  },
+  {
+    title: "Confianza y seriedad",
+    description:
+      "Cada caso se atiende con responsabilidad, claridad y compromiso en cada etapa del proceso.",
+    icon: <ShieldCheck className="h-5 w-5 text-primary" />,
+  },
+  {
+    title: "Atención personalizada",
+    description:
+      "Acompañamiento humano, estratégico y cercano según las necesidades de cada cliente.",
+    icon: <Mail className="h-5 w-5 text-primary" />,
+  },
+];
 
 export const TeamSection = () => {
   return (
-    <section id="profesional" className="container py-24 sm:py-32">
-      <div className="grid lg:grid-cols-2 gap-12 items-center lg:w-[85%] mx-auto">
-        <div className="relative">
-          <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl"></div>
+    <section id="profesional" className="container py-20 sm:py-24">
+      <div className="mx-auto mb-10 max-w-3xl text-center">
+        <Badge
+          variant="outline"
+          className="mb-4 border-[#d4af63]/30 bg-white/80 px-4 py-2 text-primary"
+        >
+          Profesional
+        </Badge>
 
-          <div className="relative overflow-hidden rounded-3xl border border-primary/15 shadow-xl bg-card">
-            {/*<Image
-              src="/duena-inmobiliaria.jpg"
-              alt="Directora de Imperio Real"
-              width={900}
-              height={1100}
-              className="w-full h-auto object-cover"
-              priority
-            />*/}
+        <h2 className="font-[var(--font-title)] text-3xl font-bold text-foreground md:text-4xl">
+          Liderazgo con experiencia y cercanía
+        </h2>
+      </div>
+
+      <div className="mx-auto max-w-7xl">
+        {/* FILA SUPERIOR */}
+        <div className="grid items-stretch gap-8 lg:grid-cols-2">
+          {/* IMAGEN */}
+          <div className="h-full">
+            <div className="relative h-full min-h-[460px] overflow-hidden rounded-3xl border border-[#d4af63]/20 bg-white shadow-[0_12px_35px_rgba(106,27,44,0.08)]">
+              <Image
+                src="/profesional.jpeg"
+                alt="Directora de Imperio Real"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* TEXTO */}
+          <div className="flex h-full flex-col justify-center rounded-3xl border border-[#d4af63]/15 bg-white/80 p-6 shadow-[0_12px_35px_rgba(106,27,44,0.04)] md:p-8">
+            <h3 className="mb-6 font-[var(--font-title)] text-3xl text-primary">
+              Una trayectoria construida desde la confianza
+            </h3>
+
+            <div className="space-y-5 text-base leading-8 text-muted-foreground md:text-lg">
+              <p>
+                Nuestra directora lidera este proyecto con una visión enfocada en
+                la confianza, la atención cercana y el acompañamiento profesional
+                en procesos inmobiliarios y jurídicos.
+              </p>
+
+              <p>
+                Soy una abogada especializada en conciliación, así como en derecho
+                civil, comercial, inmobiliario y de familia. A lo largo de mi
+                carrera, he construido una sólida trayectoria basada en el
+                profesionalismo y la confianza.
+              </p>
+
+              <p>
+                Me dedico a lograr acuerdos extraprocesales efectivos, especialmente
+                en conciliación y transacción, garantizando soluciones ágiles y
+                responsables. Con empatía, claridad y un compromiso inquebrantable,
+                he logrado que mis clientes no solo queden satisfechos, sino que,
+                gracias a mi trabajo, me recomienden de generación en generación.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <Badge variant="outline" className="border-primary/20 text-primary">
-            Dirección y liderazgo
-          </Badge>
-
-          <div className="space-y-3">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Conoce a la persona detrás de
-              <span className="text-transparent px-2 bg-gradient-to-r from-[#6E1F2A] to-[#C8A15A] bg-clip-text">
-                Imperio Real
-              </span>
-            </h2>
-
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Nuestra directora lidera este proyecto con una visión enfocada en
-              la confianza, la atención cercana y el acompañamiento profesional
-              en procesos inmobiliarios y jurídicos.
-            </p>
-          </div>
-
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              Su experiencia y compromiso permiten brindar a cada cliente una
-              orientación clara, estratégica y humana, entendiendo que detrás de
-              cada trámite, negocio o consulta existen decisiones importantes.
-            </p>
-
-            <p>
-              En Imperio Real buscamos que cada persona se sienta respaldada
-              desde el primer contacto, con una atención seria, elegante y
-              enfocada en generar tranquilidad y resultados.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-4 pt-2">
-            <div className="rounded-2xl border border-primary/10 bg-card p-4">
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Enfoque inmobiliario</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Acompañamiento cercano en procesos relacionados con bienes
-                raíces, negociación y orientación comercial.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-primary/10 bg-card p-4">
-              <div className="flex items-center gap-3 mb-2">
-                <Scale className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Respaldo jurídico</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Visión profesional para revisar, orientar y dar mayor seguridad
-                a decisiones legales importantes.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-primary/10 bg-card p-4">
-              <div className="flex items-center gap-3 mb-2">
-                <ShieldCheck className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Confianza y seriedad</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Atención con criterio, responsabilidad y una imagen profesional
-                alineada con la marca.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-primary/10 bg-card p-4">
-              <div className="flex items-center gap-3 mb-2">
-                <Mail className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Atención personalizada</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Cada caso se aborda con escucha, claridad y acompañamiento
-                adaptado a la necesidad del cliente.
-              </p>
-            </div>
-          </div>
-
-          <div className="pt-4">
-            <Button
-              asChild
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+        {/* FILA INFERIOR: LOS 4 EN LA MISMA FILA */}
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {highlights.map(({ title, description, icon }) => (
+            <Card
+              key={title}
+              className="group relative h-full overflow-hidden rounded-2xl border border-[#d4af63]/15 bg-white shadow-[0_10px_30px_rgba(106,27,44,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(106,27,44,0.10)]"
             >
-              <Link href="#contacto">Hablar con nosotros</Link>
-            </Button>
-          </div>
+              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#6a1b2c] via-[#d4af63] to-[#6a1b2c]" />
+
+              <CardContent className="p-5">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#d4af63]/20 bg-[#faf7f8] shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  {icon}
+                </div>
+
+                <CardTitle className="mb-2 font-[var(--font-title)] text-xl text-primary">
+                  {title}
+                </CardTitle>
+
+                <p className="text-[15px] leading-7 text-muted-foreground">
+                  {description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

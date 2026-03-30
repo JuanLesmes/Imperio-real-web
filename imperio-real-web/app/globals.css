@@ -8,65 +8,65 @@ html {
 
 @layer base {
   :root {
-    --background: 35 30% 94%;         /* crema elegante */
-    --foreground: 348 20% 11%;        /* texto oscuro cálido */
+    --background: 0 0% 100%;            /* blanco */
+    --foreground: 345 24% 14%;          /* texto oscuro elegante */
 
     --card: 0 0% 100%;
-    --card-foreground: 348 20% 11%;
+    --card-foreground: 345 24% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 348 20% 11%;
+    --popover-foreground: 345 24% 14%;
 
-    --primary: 349 53% 27%;           /* vino tinto principal */
-    --primary-foreground: 35 30% 94%;
+    --primary: 343 63% 24%;             /* vinotinto */
+    --primary-foreground: 43 62% 67%;   /* dorado suave */
 
-    --secondary: 350 24% 86%;         /* vino claro suave, menos rosado */
-    --secondary-foreground: 348 20% 11%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 345 24% 14%;
 
-    --muted: 35 18% 89%;
-    --muted-foreground: 348 10% 34%;
+    --muted: 0 0% 97%;
+    --muted-foreground: 345 10% 40%;
 
-    --accent: 38 45% 55%;             /* dorado viejo */
-    --accent-foreground: 348 20% 11%;
+    --accent: 43 62% 67%;               /* dorado */
+    --accent-foreground: 343 63% 24%;   /* vinotinto */
 
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 349 18% 74%;
-    --input: 349 18% 74%;
-    --ring: 349 53% 27%;
+    --border: 343 20% 84%;
+    --input: 343 20% 84%;
+    --ring: 343 63% 24%;
 
-    --radius: 0.6rem;
+    --radius: 0.85rem;
   }
 
   .dark {
-    --background: 348 24% 8%;         /* vino casi negro */
-    --foreground: 35 20% 92%;
+    --background: 345 28% 10%;
+    --foreground: 43 45% 90%;
 
-    --card: 348 22% 11%;
-    --card-foreground: 35 20% 92%;
+    --card: 345 25% 12%;
+    --card-foreground: 43 45% 90%;
 
-    --popover: 348 22% 11%;
-    --popover-foreground: 35 20% 92%;
+    --popover: 345 25% 12%;
+    --popover-foreground: 43 45% 90%;
 
-    --primary: 38 45% 55%;            /* dorado resalta en oscuro */
-    --primary-foreground: 348 24% 8%;
+    --primary: 43 62% 67%;
+    --primary-foreground: 343 63% 20%;
 
-    --secondary: 348 18% 16%;
-    --secondary-foreground: 35 20% 92%;
+    --secondary: 345 18% 16%;
+    --secondary-foreground: 43 45% 90%;
 
-    --muted: 348 14% 17%;
-    --muted-foreground: 35 12% 74%;
+    --muted: 345 16% 18%;
+    --muted-foreground: 43 16% 74%;
 
-    --accent: 349 53% 27%;            /* vino como acento en dark */
-    --accent-foreground: 35 20% 92%;
+    --accent: 343 63% 24%;
+    --accent-foreground: 43 45% 90%;
 
     --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 348 14% 22%;
-    --input: 348 14% 22%;
-    --ring: 38 45% 55%;
+    --border: 345 14% 22%;
+    --input: 345 14% 22%;
+    --ring: 43 62% 67%;
   }
 }
 
@@ -77,5 +77,74 @@ html {
 
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at top left, rgba(106, 27, 44, 0.06), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(201, 161, 90, 0.08), transparent 25%),
+      linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,1));
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-luxury-waves {
+    position: relative;
+  }
+
+  .bg-luxury-waves::before,
+  .bg-luxury-waves::after {
+    content: "";
+    position: absolute;
+    inset: auto;
+    width: 140%;
+    height: 260px;
+    left: -20%;
+    border-radius: 45%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-luxury-waves::before {
+    top: -80px;
+    background: radial-gradient(circle, rgba(106, 27, 44, 0.08) 0%, rgba(106, 27, 44, 0.02) 45%, transparent 70%);
+    transform: rotate(-4deg);
+  }
+
+  .bg-luxury-waves::after {
+    bottom: -120px;
+    background: radial-gradient(circle, rgba(201, 161, 90, 0.10) 0%, rgba(201, 161, 90, 0.03) 45%, transparent 72%);
+    transform: rotate(5deg);
+  }
+
+  .luxury-section {
+    @apply relative z-10;
+  }
+
+  .gold-text {
+    color: hsl(var(--accent));
+  }
+
+  .wine-gradient-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #6a1b2c 0%, #b58a3a 55%, #7b2333 100%);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(12px);
+  }
+
+  .gold-border {
+    border-color: rgba(181, 138, 58, 0.35);
+  }
+
+  .luxury-shadow {
+    box-shadow:
+      0 10px 30px rgba(106, 27, 44, 0.08),
+      0 4px 10px rgba(0, 0, 0, 0.04);
   }
 }
