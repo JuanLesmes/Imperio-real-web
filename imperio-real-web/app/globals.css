@@ -6,10 +6,16 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;            /* blanco */
-    --foreground: 345 24% 14%;          /* texto oscuro elegante */
+    --background: 0 0% 100%;
+    --foreground: 345 24% 14%;
 
     --card: 0 0% 100%;
     --card-foreground: 345 24% 14%;
@@ -17,8 +23,8 @@ html {
     --popover: 0 0% 100%;
     --popover-foreground: 345 24% 14%;
 
-    --primary: 343 63% 24%;             /* vinotinto */
-    --primary-foreground: 43 62% 67%;   /* dorado suave */
+    --primary: 343 63% 24%;
+    --primary-foreground: 43 62% 67%;
 
     --secondary: 0 0% 98%;
     --secondary-foreground: 345 24% 14%;
@@ -26,8 +32,8 @@ html {
     --muted: 0 0% 97%;
     --muted-foreground: 345 10% 40%;
 
-    --accent: 43 62% 67%;               /* dorado */
-    --accent-foreground: 343 63% 24%;   /* vinotinto */
+    --accent: 43 62% 67%;
+    --accent-foreground: 343 63% 24%;
 
     --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 98%;
@@ -73,6 +79,7 @@ html {
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
 
   body {
@@ -92,16 +99,16 @@ html {
 @layer utilities {
   .bg-luxury-waves {
     position: relative;
+    overflow-x: clip;
   }
 
   .bg-luxury-waves::before,
   .bg-luxury-waves::after {
     content: "";
     position: absolute;
-    inset: auto;
-    width: 140%;
-    height: 260px;
-    left: -20%;
+    width: 110%;
+    height: 220px;
+    left: -5%;
     border-radius: 45%;
     filter: blur(40px);
     pointer-events: none;

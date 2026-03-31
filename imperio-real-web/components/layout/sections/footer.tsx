@@ -4,85 +4,129 @@ import Link from "next/link";
 
 export const FooterSection = () => {
   return (
-    <footer id="footer" className="container py-24 sm:py-32">
-      <div className="p-10 bg-card border border-primary/15 rounded-2xl shadow-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-12 gap-y-10">
-          <div className="xl:col-span-1">
-            <Link href="/" className="flex font-bold items-center mb-4">
-              <div className="w-10 h-10 mr-3 rounded-lg bg-gradient-to-tr from-[#6E1F2A] via-[#8A2C3B] to-[#C8A15A] text-white flex items-center justify-center border border-primary/20">
-                <Scale className="w-5 h-5" />
+    <footer id="footer" className="container pt-20 pb-0 sm:pt-24 sm:pb-0">
+      <div className="overflow-hidden rounded-t-[2rem] border border-b-0 border-[#d4af63]/30 bg-[#6a1b2c] text-[#f3d68a] shadow-[0_18px_45px_rgba(106,27,44,0.28)]">
+        <div className="p-8 sm:p-10">
+          <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2 xl:grid-cols-4">
+            <div className="xl:col-span-1">
+              <Link href="/" className="mb-4 flex items-center font-bold">
+                <div className="mr-3 flex h-11 w-11 items-center justify-center rounded-xl border border-[#d4af63]/30 bg-gradient-to-br from-[#5b1624] via-[#7b2333] to-[#b58a3a] text-[#f8e7b5] shadow-md">
+                  <Scale className="h-5 w-5" />
+                </div>
+
+                <div className="flex flex-col leading-none">
+                  <h3 className="font-[var(--font-title)] text-2xl text-[#f3d68a]">
+                    Imperio Real
+                  </h3>
+                  <span className="mt-1 text-[11px] uppercase tracking-[0.25em] text-[#f8e7b5]/70">
+                    Jurídico e inmobiliario
+                  </span>
+                </div>
+              </Link>
+
+              <p className="leading-relaxed text-[#f8e7b5]/78">
+                Acompañamiento inmobiliario y jurídico con enfoque profesional,
+                estratégico y confiable.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h3 className="font-[var(--font-title)] text-xl text-[#f3d68a]">
+                Navegación
+              </h3>
+
+              <Link
+                href="#inicio"
+                className="text-[#f8e7b5]/78 transition-all hover:text-white"
+              >
+                Inicio
+              </Link>
+
+              <Link
+                href="#nosotros"
+                className="text-[#f8e7b5]/78 transition-all hover:text-white"
+              >
+                Nosotros
+              </Link>
+
+              <Link
+                href="#servicios"
+                className="text-[#f8e7b5]/78 transition-all hover:text-white"
+              >
+                Servicios
+              </Link>
+
+              <Link
+                href="#profesional"
+                className="text-[#f8e7b5]/78 transition-all hover:text-white"
+              >
+                Profesional
+              </Link>
+
+              <Link
+                href="#contacto"
+                className="text-[#f8e7b5]/78 transition-all hover:text-white"
+              >
+                Contacto
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h3 className="font-[var(--font-title)] text-xl text-[#f3d68a]">
+                Servicios
+              </h3>
+
+              <div className="text-[#f8e7b5]/78">Asesoría inmobiliaria</div>
+              <div className="text-[#f8e7b5]/78">Revisión jurídica</div>
+              <div className="text-[#f8e7b5]/78">Contratos y documentos</div>
+              <div className="text-[#f8e7b5]/78">Acompañamiento legal</div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h3 className="font-[var(--font-title)] text-xl text-[#f3d68a]">
+                Contacto
+              </h3>
+
+              <div className="flex items-center gap-2 text-[#f8e7b5]/78">
+                <MapPin className="h-4 w-4 text-[#d4af63]" />
+                <span>Bogotá, Colombia</span>
               </div>
 
-              <h3 className="text-2xl">Imperio Real</h3>
-            </Link>
+              <div className="flex items-center gap-2 text-[#f8e7b5]/78">
+                <Phone className="h-4 w-4 text-[#d4af63]" />
+                <span>+57 317 893 5798</span>
+              </div>
 
-            <p className="text-muted-foreground leading-relaxed">
-              Acompañamiento inmobiliario y jurídico con enfoque profesional,
-              estratégico y confiable.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <h3 className="font-bold text-lg">Navegación</h3>
-
-            <Link href="#inicio" className="opacity-70 hover:opacity-100 hover:text-primary transition-all">
-              Inicio
-            </Link>
-
-            <Link href="#servicios" className="opacity-70 hover:opacity-100 hover:text-primary transition-all">
-              Servicios
-            </Link>
-
-            <Link href="#equipo" className="opacity-70 hover:opacity-100 hover:text-primary transition-all">
-              Equipo
-            </Link>
-
-            <Link href="#contacto" className="opacity-70 hover:opacity-100 hover:text-primary transition-all">
-              Contacto
-            </Link>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <h3 className="font-bold text-lg">Servicios</h3>
-
-            <div className="opacity-70">Asesoría inmobiliaria</div>
-            <div className="opacity-70">Revisión jurídica</div>
-            <div className="opacity-70">Contratos y documentos</div>
-            <div className="opacity-70">Acompañamiento legal</div>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <h3 className="font-bold text-lg">Contacto</h3>
-
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="w-4 h-4 text-primary" />
-              <span>Bogotá, Colombia</span>
-            </div>
-
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Phone className="w-4 h-4 text-primary" />
-              <span>+57 300 000 0000</span>
-            </div>
-
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Mail className="w-4 h-4 text-primary" />
-              <span>contacto@imperioreal.com</span>
+              <div className="flex items-center gap-2 text-[#f8e7b5]/78">
+                <Mail className="h-4 w-4 text-[#d4af63]" />
+                <span>serviciosjuridicosIR@gmail.com</span>
+              </div>
             </div>
           </div>
+
+          <Separator className="my-6 bg-[#d4af63]/20" />
+
+          <section className="flex flex-col items-center justify-between gap-3 text-sm text-[#f8e7b5]/72 md:flex-row">
+            <h3>&copy; 2026 Imperio Real. Todos los derechos reservados.</h3>
+
+            <div className="flex items-center gap-2">
+              <Building2 className="h-4 w-4 text-[#d4af63]" />
+              <span>Servicios inmobiliarios y jurídicos</span>
+            </div>
+          </section>
         </div>
 
-        <Separator className="my-6" />
-
-        <section className="flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-muted-foreground">
-          <h3>
-            &copy; 2026 Imperio Real. Todos los derechos reservados.
-          </h3>
-
-          <div className="flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-primary" />
-            <span>Servicios inmobiliarios y jurídicos</span>
-          </div>
-        </section>
+        <div className="border-t border-[#d4af63]/20 bg-[#541321] px-8 py-4 text-center text-sm text-[#f8e7b5]/80 sm:px-10">
+          Esta página web fue hecha por{" "}
+          <a
+            href="https://intisolutions.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-[#f3d68a] underline-offset-4 transition hover:text-white hover:underline"
+          >
+            Inti Solutions
+          </a>
+        </div>
       </div>
     </footer>
   );
