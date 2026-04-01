@@ -5,6 +5,7 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
+  scroll-padding-top: 110px;
 }
 
 html,
@@ -17,6 +18,10 @@ body {
 
 body {
   min-height: 100vh;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
 }
 
 @layer base {

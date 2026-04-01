@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
-      <main className="flex-1">
+    <div className="flex min-h-screen flex-col">
+      <main className="flex-1 pt-6 md:pt-8">
         <HeroSection />
         <IdentitySection />
         <ServicesSection />
@@ -25,6 +25,6 @@ export default function Home() {
       </main>
 
       <FooterSection />
-    </>
+    </div>
   );
 }

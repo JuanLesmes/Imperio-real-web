@@ -35,7 +35,7 @@ export const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (!element) return;
 
-    const offset = 110;
+    const offset = 20;
     const top =
       element.getBoundingClientRect().top + window.pageYOffset - offset;
 
@@ -55,7 +55,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 flex w-[94%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#daba8a]/30 bg-[#48101e] px-4 py-3 shadow-[0_16px_38px_rgba(53,8,21,0.30)] md:w-[90%] lg:w-[78%] lg:max-w-screen-xl">
+    <header className="fixed left-1/2 top-1 z-50 flex w-[94%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#daba8a]/30 bg-[#48101e] px-4 py-3 shadow-[0_16px_38px_rgba(53,8,21,0.30)] md:w-[90%] lg:w-[78%] lg:max-w-screen-xl">
       <a
         href="#inicio"
         onClick={(e) => handleNavClick(e, "inicio")}
@@ -77,7 +77,7 @@ export const Navbar = () => {
             Imperio Real
           </span>
           <span className="hidden text-[11px] uppercase tracking-[0.25em] text-[#daba8a]/85 sm:block">
-            Jurídico e inmobiliario
+            Abogadas
           </span>
         </div>
       </a>

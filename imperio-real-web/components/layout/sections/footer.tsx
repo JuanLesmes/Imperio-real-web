@@ -28,7 +28,7 @@ export const FooterSection = () => {
                   Imperio Real
                 </h3>
                 <span className="mt-1 text-[10px] uppercase tracking-[0.22em] text-[#daba8a]/85">
-                  Jurídico e inmobiliario
+                  Abogadas
                 </span>
               </div>
             </Link>
@@ -79,7 +79,7 @@ export const FooterSection = () => {
 
             <div className="flex items-center gap-2 text-[#f3e5c3]/78">
               <Mail className="h-4 w-4 text-[#daba8a]" />
-              <span>serviciosjuridicosIR@gmail.com</span>
+              <span>imperiorealabogadas@hotmail.com</span>
             </div>
           </div>
         </div>
