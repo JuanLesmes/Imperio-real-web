@@ -54,10 +54,12 @@ export const TeamSection = () => {
           <div className="h-full">
             <div className="relative h-full min-h-[460px] overflow-hidden rounded-3xl border border-[#d4af63]/20 bg-white shadow-[0_12px_35px_rgba(106,27,44,0.08)]">
               <Image
-                src="/profesional.jpeg"
+                src="/DirectoraImperioReal.jpg"
                 alt="Directora de Imperio Real"
                 fill
-                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
               />
             </div>
           </div>
@@ -70,13 +72,13 @@ export const TeamSection = () => {
 
             <div className="space-y-5 text-base leading-8 text-muted-foreground md:text-lg">
               <p>
-                Nuestra directora lidera este proyecto con una visión enfocada en
+                Nuestra directora Dora Inés Castañeda Morales lidera este proyecto con una visión enfocada en
                 la confianza, la atención cercana y el acompañamiento profesional
                 en procesos inmobiliarios y jurídicos.
               </p>
 
               <p>
-                Soy una abogada especializada en conciliación, así como en derecho
+                "Soy una abogada especializada en conciliación, así como en derecho
                 civil, comercial, inmobiliario y de familia. A lo largo de mi
                 carrera, he construido una sólida trayectoria basada en el
                 profesionalismo y la confianza.
@@ -87,7 +89,7 @@ export const TeamSection = () => {
                 en conciliación y transacción, garantizando soluciones ágiles y
                 responsables. Con empatía, claridad y un compromiso inquebrantable,
                 he logrado que mis clientes no solo queden satisfechos, sino que,
-                gracias a mi trabajo, me recomienden de generación en generación.
+                gracias a mi trabajo, me recomienden de generación en generación."
               </p>
             </div>
           </div>

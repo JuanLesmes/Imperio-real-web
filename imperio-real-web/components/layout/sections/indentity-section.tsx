@@ -7,25 +7,25 @@ const identityItems = [
     title: "Misión",
     icon: Target,
     content:
-      "Nuestra misión es garantizar un acceso ágil a la justicia en Colombia, mediante un servicio legal cercano, tecnológico y eficaz.",
+      "Nuestra misión es brindar asesoría jurídica e inmobiliaria con cercanía, agilidad y excelencia, integrando herramientas tecnológicas que faciliten el acceso a soluciones legales eficaces en Colombia.",
   },
   {
     title: "Visión",
     icon: Eye,
     content:
-      "Nuestra visión es ser la firma líder de asesoría jurídica e inmobiliaria en Colombia, reconocida por su capacidad de brindar servicios integrales, tanto virtuales como presenciales, en derecho civil, comercial, de familia e inmobiliario.",
+      "Nuestra visión es consolidarnos como la firma líder en asesoría jurídica e inmobiliaria en Colombia, reconocida por ofrecer soluciones integrales, virtuales y presenciales, en derecho civil, comercial, de familia e inmobiliario.",
   },
   {
     title: "Valores",
     icon: Gem,
     content:
-      "Nos basamos en la integridad, la confianza, la transparencia, la excelencia profesional y la empatía.",
+      "Nos guiamos por la integridad, la transparencia, la confianza, la excelencia profesional y la empatía en cada relación con nuestros clientes.",
   },
   {
     title: "Compromiso",
     icon: ShieldCheck,
     content:
-      "Nos comprometemos con cada cliente, ofreciendo atención personalizada, soluciones efectivas y un acompañamiento constante, asegurando que cada paso se dé con ética y responsabilidad.",
+      "Nos comprometemos a brindar atención personalizada, soluciones efectivas y un acompañamiento constante, asegurando que cada proceso se desarrolle con ética, responsabilidad y cercanía.",
   },
 ];
 
@@ -41,17 +41,18 @@ export const IdentitySection = () => {
         </Badge>
 
         <h2 className="mb-4 font-[var(--font-title)] text-3xl font-bold text-foreground md:text-4xl">
-          Nuestra esencia, visión y compromiso
+          Nuestra Esencia, Visión y Compromiso
         </h2>
 
         <p className="mx-auto max-w-3xl text-base leading-8 text-muted-foreground md:text-lg">
-          Imperio Real, con 20 años de experiencia en Colombia, es una firma
-          líder en asesoría jurídica e inmobiliaria, con enfoque en derecho
-          civil, de familia, comercial e inmobiliario. Ofrecemos consultoría,
-          asesoría y representación legal, tanto presencial como virtual, con
-          énfasis en la agilidad, la eficiencia y la economía procesal,
-          activando también mecanismos extraprocesales como la conciliación,
-          entre otros.
+          Imperio Real es una firma de asesoría jurídica e inmobiliaria
+          con 20 años de trayectoria en Colombia, comprometida con la 
+          excelencia, la innovación y el cierre de la brecha de género 
+          a través de la vinculación y proyección de abogadas en su equipo. 
+          Brindamos consultoría, asesoría y representación legal en las áreas 
+          de derecho civil, de familia, comercial e inmobiliario, de manera 
+          presencial y virtual, distinguiéndonos por la agilidad, la eficiencia, 
+          la economía procesal y el impulso de mecanismos extraprocesales como la conciliación.
         </p>
       </div>
 
