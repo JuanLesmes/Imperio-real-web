@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="es">
       <body
         className={cn(
-          "min-h-screen bg-background font-[var(--font-body)] bg-luxury-waves",
+          "min-h-screen flex flex-col bg-background font-[var(--font-body)] bg-luxury-waves",
           inter.variable,
           playfair.variable
         )}

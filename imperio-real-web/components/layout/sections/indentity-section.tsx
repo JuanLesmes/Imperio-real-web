@@ -35,7 +35,7 @@ export const IdentitySection = () => {
       <div className="mx-auto mb-10 max-w-4xl text-center">
         <Badge
           variant="outline"
-          className="mb-4 border-[#d4af63]/35 bg-white/90 px-4 py-2 text-primary shadow-sm"
+          className="mb-4 border-[#daba8a]/35 bg-white/10 px-4 py-2 text-sm text-[#48101e] backdrop-blur-sm"
         >
           Identidad institucional
         </Badge>

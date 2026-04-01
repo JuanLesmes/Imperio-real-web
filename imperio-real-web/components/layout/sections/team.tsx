@@ -33,11 +33,11 @@ const highlights = [
 
 export const TeamSection = () => {
   return (
-    <section id="profesional" className="container py-20 sm:py-24">
+    <section id="profesional" className="container py-14 sm:py-16">
       <div className="mx-auto mb-10 max-w-3xl text-center">
         <Badge
           variant="outline"
-          className="mb-4 border-[#d4af63]/30 bg-white/80 px-4 py-2 text-primary"
+          className="mb-4 border-[#daba8a]/35 bg-white/10 px-4 py-2 text-sm text-[#48101e] backdrop-blur-sm"
         >
           Profesional
         </Badge>
@@ -77,19 +77,16 @@ export const TeamSection = () => {
                 en procesos inmobiliarios y jurídicos.
               </p>
 
-              <p>
-                "Soy una abogada especializada en conciliación, así como en derecho
-                civil, comercial, inmobiliario y de familia. A lo largo de mi
-                carrera, he construido una sólida trayectoria basada en el
-                profesionalismo y la confianza.
-              </p>
-
-              <p>
-                Me dedico a lograr acuerdos extraprocesales efectivos, especialmente
-                en conciliación y transacción, garantizando soluciones ágiles y
-                responsables. Con empatía, claridad y un compromiso inquebrantable,
-                he logrado que mis clientes no solo queden satisfechos, sino que,
-                gracias a mi trabajo, me recomienden de generación en generación."
+              <p className="italic text-sm leading-7 text-[#6b5b61] md:text-base">
+                “Soy una abogada especializada en conciliación, así como en derecho
+                civil, comercial, inmobiliario y de familia. A lo largo de mi carrera,
+                he construido una sólida trayectoria basada en el profesionalismo y la
+                confianza. Me dedico a lograr acuerdos extraprocesales efectivos,
+                especialmente en conciliación y transacción, garantizando soluciones
+                ágiles y responsables. Con empatía, claridad y un compromiso
+                inquebrantable, he logrado que mis clientes no solo queden satisfechos,
+                sino que, gracias a mi trabajo, me recomienden de generación en
+                generación.”
               </p>
             </div>
           </div>

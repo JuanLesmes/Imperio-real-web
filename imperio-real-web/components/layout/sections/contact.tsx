@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "Ingresa un nombre válido").max(255),
@@ -83,13 +84,16 @@ ${message}`
   }
 
   return (
-    <section id="contacto" className="container py-24 sm:py-32">
+    <section id="contacto" className="container py-12 sm:py-14">
       <section className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
         <div>
           <div className="mb-4">
-            <h2 className="mb-2 text-lg tracking-wider text-primary">
-              Contacto
-            </h2>
+            <Badge
+                variant="outline"
+                className="mb-4 border-[#daba8a]/35 bg-white/10 px-4 py-2 text-sm text-[#48101e] backdrop-blur-sm"
+              >
+                Contacto
+              </Badge>
 
             <h2 className="text-3xl font-bold md:text-4xl">
               Conversemos sobre tu caso
@@ -102,16 +106,13 @@ ${message}`
             Cuéntanos tu necesidad y nos pondremos en contacto contigo.
           </p>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
             <div className={contactCardClass}>
               <div className={iconBoxClass}>
                 <Building2 className="h-5 w-5" />
               </div>
-
               <div className="flex flex-col">
-                <span className="text-sm font-semibold text-primary">
-                  Ubicación
-                </span>
+                <span className="text-sm font-semibold text-primary">Ubicación</span>
                 <span className="text-[15px] text-muted-foreground">
                   Carrera 13 #90-20, Oficina 206,
                 </span>
@@ -125,18 +126,15 @@ ${message}`
               <div className={iconBoxClass}>
                 <WhatsAppIcon className="h-5 w-5" />
               </div>
-
               <div className="flex flex-col">
-                <span className="text-sm font-semibold text-primary">
-                  WhatsApp
-                </span>
+                <span className="text-sm font-semibold text-primary">WhatsApp</span>
                 <a
-                  href="https://wa.me/573001234567"
+                  href="https://wa.me/573178935798"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                 >
-                  +57 300 123 4567
+                  +57 317 893 5798
                 </a>
               </div>
             </div>
@@ -145,16 +143,13 @@ ${message}`
               <div className={iconBoxClass}>
                 <Mail className="h-5 w-5" />
               </div>
-
               <div className="flex flex-col">
-                <span className="text-sm font-semibold text-primary">
-                  Correo
-                </span>
+                <span className="text-sm font-semibold text-primary">Correo</span>
                 <a
-                  href="mailto:contacto@imperioreal.com"
+                  href="mailto:imperiorealabogadas@hotmail.com"
                   className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                 >
-                  contacto@imperioreal.com
+                  imperiorealabogadas@hotmail.com
                 </a>
               </div>
             </div>
@@ -163,7 +158,6 @@ ${message}`
               <div className={iconBoxClass}>
                 <Clock3 className="h-5 w-5" />
               </div>
-
               <div className="flex flex-col">
                 <span className="text-sm font-semibold text-primary">
                   Horario de atención
@@ -186,10 +180,7 @@ ${message}`
 
           <CardContent>
             <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="grid w-full gap-4"
-              >
+              <form onSubmit={form.handleSubmit(onSubmit)} className="grid w-full gap-4">
                 <div className="flex flex-col gap-6 md:!flex-row">
                   <FormField
                     control={form.control}
@@ -227,11 +218,7 @@ ${message}`
                     <FormItem>
                       <FormLabel>Correo electrónico</FormLabel>
                       <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="correo@ejemplo.com"
-                          {...field}
-                        />
+                        <Input type="email" placeholder="correo@ejemplo.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -244,10 +231,7 @@ ${message}`
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Tipo de consulta</FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Selecciona una opción" />
@@ -255,21 +239,11 @@ ${message}`
                         </FormControl>
 
                         <SelectContent>
-                          <SelectItem value="Asesoría inmobiliaria">
-                            Asesoría inmobiliaria
-                          </SelectItem>
-                          <SelectItem value="Revisión jurídica">
-                            Revisión jurídica
-                          </SelectItem>
-                          <SelectItem value="Contratos y documentos">
-                            Contratos y documentos
-                          </SelectItem>
-                          <SelectItem value="Acompañamiento legal">
-                            Acompañamiento legal
-                          </SelectItem>
-                          <SelectItem value="Consulta general">
-                            Consulta general
-                          </SelectItem>
+                          <SelectItem value="Asesoría inmobiliaria">Asesoría inmobiliaria</SelectItem>
+                          <SelectItem value="Revisión jurídica">Revisión jurídica</SelectItem>
+                          <SelectItem value="Contratos y documentos">Contratos y documentos</SelectItem>
+                          <SelectItem value="Acompañamiento legal">Acompañamiento legal</SelectItem>
+                          <SelectItem value="Consulta general">Consulta general</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -291,7 +265,6 @@ ${message}`
                           {...field}
                         />
                       </FormControl>
-
                       <FormMessage />
                     </FormItem>
                   )}

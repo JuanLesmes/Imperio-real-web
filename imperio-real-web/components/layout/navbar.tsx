@@ -12,12 +12,6 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Separator } from "../ui/separator";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "../ui/navigation-menu";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -27,19 +21,46 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#profesional", label: "Profesional" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "inicio", label: "Inicio" },
+  { href: "nosotros", label: "Nosotros" },
+  { href: "servicios", label: "Servicios" },
+  { href: "profesional", label: "Profesional" },
+  { href: "contacto", label: "Contacto" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+
+    const offset = 110;
+    const top =
+      element.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+    setIsOpen(false);
+  };
+
   return (
-    <header className="sticky top-5 z-50 mx-auto flex w-[94%] items-center justify-between rounded-2xl border border-[#daba8a]/30 bg-[#48101e] px-4 py-3 shadow-[0_16px_38px_rgba(53,8,21,0.30)] md:w-[90%] lg:w-[78%] lg:max-w-screen-xl">
-      <Link href="/" className="flex items-center">
+    <header className="fixed left-1/2 top-4 z-50 flex w-[94%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#daba8a]/30 bg-[#48101e] px-4 py-3 shadow-[0_16px_38px_rgba(53,8,21,0.30)] md:w-[90%] lg:w-[78%] lg:max-w-screen-xl">
+      <a
+        href="#inicio"
+        onClick={(e) => handleNavClick(e, "inicio")}
+        className="flex items-center"
+      >
         <div className="mr-3 flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#daba8a]/35 bg-[#350815] shadow-[0_6px_16px_rgba(53,8,21,0.30)]">
           <Image
             src="/EscudoImperioReal.jpg"
@@ -59,7 +80,7 @@ export const Navbar = () => {
             Jurídico e inmobiliario
           </span>
         </div>
-      </Link>
+      </a>
 
       <div className="flex items-center lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -80,7 +101,11 @@ export const Navbar = () => {
             <div>
               <SheetHeader className="mb-8 ml-1">
                 <SheetTitle className="text-left">
-                  <Link href="/" className="flex items-center">
+                  <a
+                    href="#inicio"
+                    onClick={(e) => handleNavClick(e, "inicio")}
+                    className="flex items-center"
+                  >
                     <div className="mr-3 flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#daba8a]/35 bg-[#350815] shadow-[0_6px_16px_rgba(53,8,21,0.30)]">
                       <Image
                         src="/EscudoImperioReal.jpg"
@@ -99,7 +124,7 @@ export const Navbar = () => {
                         Jurídico e inmobiliario
                       </span>
                     </div>
-                  </Link>
+                  </a>
                 </SheetTitle>
               </SheetHeader>
 
@@ -107,12 +132,13 @@ export const Navbar = () => {
                 {routeList.map(({ href, label }) => (
                   <Button
                     key={href}
-                    onClick={() => setIsOpen(false)}
                     asChild
                     variant="ghost"
                     className="justify-start rounded-xl px-4 py-6 text-base text-[#f2dfb2] hover:bg-white/10 hover:text-white"
                   >
-                    <Link href={href}>{label}</Link>
+                    <a href={`#${href}`} onClick={(e) => handleNavClick(e, href)}>
+                      {label}
+                    </a>
                   </Button>
                 ))}
               </div>
@@ -122,9 +148,12 @@ export const Navbar = () => {
                   asChild
                   className="w-full rounded-full bg-[#daba8a] font-semibold text-[#48101e] shadow-sm hover:bg-[#e7c996]"
                 >
-                  <Link href="#contacto" onClick={() => setIsOpen(false)}>
+                  <a
+                    href="#contacto"
+                    onClick={(e) => handleNavClick(e, "contacto")}
+                  >
                     Agenda tu consulta
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -136,29 +165,30 @@ export const Navbar = () => {
         </Sheet>
       </div>
 
-      <NavigationMenu className="hidden lg:flex">
-        <NavigationMenuList className="gap-2">
-          {routeList.map(({ href, label }) => (
-            <NavigationMenuItem key={href}>
-              <NavigationMenuLink asChild>
-                <Link
-                  href={href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-[#f2dfb2] transition-all duration-300 hover:bg-white/10 hover:text-white"
-                >
-                  {label}
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
+      <nav className="hidden items-center gap-2 lg:flex">
+        {routeList.map(({ href, label }) => (
+          <a
+            key={href}
+            href={`#${href}`}
+            onClick={(e) => handleNavClick(e, href)}
+            className="rounded-full px-4 py-2 text-sm font-medium text-[#f2dfb2] transition-all duration-300 hover:bg-white/10 hover:text-white"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
 
       <div className="hidden items-center gap-3 lg:flex">
         <Button
           asChild
           className="rounded-full bg-[#daba8a] px-5 font-semibold text-[#48101e] shadow-sm hover:bg-[#e7c996]"
         >
-          <Link href="#contacto">Agenda tu consulta</Link>
+          <a
+            href="#contacto"
+            onClick={(e) => handleNavClick(e, "contacto")}
+          >
+            Agenda tu consulta
+          </a>
         </Button>
       </div>
     </header>

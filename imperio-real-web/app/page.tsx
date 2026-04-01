@@ -15,12 +15,15 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <IdentitySection />
-      <ServicesSection />
-      <TeamSection />
-      <ContactSection />
-      <FAQSection />
+      <main className="flex-1">
+        <HeroSection />
+        <IdentitySection />
+        <ServicesSection />
+        <TeamSection />
+        <ContactSection />
+        <FAQSection />
+      </main>
+
       <FooterSection />
     </>
   );

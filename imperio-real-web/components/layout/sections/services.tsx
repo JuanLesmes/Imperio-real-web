@@ -1,4 +1,5 @@
-import { Building2, FileText, Scale, ShieldCheck } from "lucide-react";
+import { Building2, FileText, Home, Scale, ShieldCheck } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardDescription,
@@ -16,8 +17,14 @@ const serviceList: ServiceProps[] = [
   {
     title: "Asesoría inmobiliaria",
     description:
-      "Acompañamiento en procesos de compra, venta, arriendo y negociación de inmuebles, con enfoque estratégico y respaldo profesional.",
+      "Acompañamiento en procesos de arriendo, negociación y gestión de inmuebles, con enfoque estratégico y respaldo profesional.",
     icon: <Building2 className="h-6 w-6 text-primary" />,
+  },
+  {
+    title: "Compra y venta de inmuebles",
+    description:
+      "Asesoría integral en procesos de compra y venta de inmuebles, brindando seguridad, análisis y acompañamiento en cada etapa de la negociación.",
+    icon: <Home className="h-6 w-6 text-primary" />,
   },
   {
     title: "Estudio y revisión jurídica",
@@ -41,11 +48,14 @@ const serviceList: ServiceProps[] = [
 
 export const ServicesSection = () => {
   return (
-    <section id="servicios" className="container py-20 sm:py-24">
+    <section id="servicios" className="container py-14 sm:py-16">
       <div className="mx-auto mb-12 max-w-3xl text-center">
-        <h2 className="mb-2 text-lg tracking-wider text-primary">
+        <Badge
+          variant="outline"
+          className="mb-4 border-[#daba8a]/35 bg-white/10 px-4 py-2 text-sm text-[#48101e] backdrop-blur-sm"
+        >
           Servicios
-        </h2>
+        </Badge>
 
         <h3 className="mb-4 font-[var(--font-title)] text-3xl font-bold text-foreground md:text-4xl">
           Soluciones inmobiliarias y jurídicas
@@ -58,7 +68,7 @@ export const ServicesSection = () => {
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {serviceList.map(({ title, description, icon }) => (
           <Card
             key={title}

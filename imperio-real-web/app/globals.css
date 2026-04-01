@@ -4,12 +4,19 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
 }
 
 @layer base {
@@ -44,9 +51,7 @@ body {
 
     --radius: 0.85rem;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
     box-sizing: border-box;
@@ -69,12 +74,17 @@ body {
   h6 {
     letter-spacing: -0.02em;
   }
+
+  section[id],
+  footer[id] {
+    scroll-margin-top: 110px;
+  }
 }
 
 @layer utilities {
   .bg-luxury-waves {
     position: relative;
-    overflow-x: clip;
+    overflow: hidden;
   }
 
   .bg-luxury-waves::before,
@@ -82,7 +92,7 @@ body {
     content: "";
     position: absolute;
     width: 110%;
-    height: 220px;
+    height: 180px;
     left: -5%;
     border-radius: 45%;
     filter: blur(40px);
@@ -91,25 +101,25 @@ body {
   }
 
   .bg-luxury-waves::before {
-    top: -80px;
+    top: 0;
     background: radial-gradient(
       circle,
       rgba(72, 16, 30, 0.08) 0%,
       rgba(72, 16, 30, 0.02) 45%,
       transparent 70%
     );
-    transform: rotate(-4deg);
+    transform: translateY(-40%) rotate(-4deg);
   }
 
   .bg-luxury-waves::after {
-    bottom: -120px;
+    bottom: 0;
     background: radial-gradient(
       circle,
       rgba(218, 186, 138, 0.1) 0%,
       rgba(218, 186, 138, 0.03) 45%,
       transparent 72%
     );
-    transform: rotate(5deg);
+    transform: translateY(40%) rotate(5deg);
   }
 
   .luxury-section {

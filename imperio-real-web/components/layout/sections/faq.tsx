@@ -5,6 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import { Badge } from "@/components/ui/badge";
+
 interface FAQProps {
   question: string;
   answer: string;
@@ -14,7 +16,8 @@ interface FAQProps {
 const FAQList: FAQProps[] = [
   {
     question: "¿Por qué es importante la Ley 820 de arrendamiento?",
-    answer: "La Ley 820 de 2003 es importante porque regula los contratos de arrendamiento de vivienda urbana en Colombia y establece reglas claras para arrendadores y arrendatarios. Esta norma define derechos, deberes, causales de terminación, reajustes del canon y mecanismos para resolver conflictos, lo que ayuda a dar mayor seguridad jurídica a la relación de arrendamiento.",
+    answer:
+      "La Ley 820 de 2003 es importante porque regula los contratos de arrendamiento de vivienda urbana en Colombia y establece reglas claras para arrendadores y arrendatarios. Esta norma define derechos, deberes, causales de terminación, reajustes del canon y mecanismos para resolver conflictos, lo que ayuda a dar mayor seguridad jurídica a la relación de arrendamiento.",
     value: "item-1",
   },
   {
@@ -24,45 +27,47 @@ const FAQList: FAQProps[] = [
     value: "item-2",
   },
   {
-    question:
-      "¿Cuánto tiempo puede estar una herencia en Colombia?",
+    question: "¿Cuánto tiempo puede estar una herencia en Colombia?",
     answer:
       "En Colombia no existe un plazo único que determine cuánto “puede durar” una herencia, porque el tiempo depende de si los herederos están de acuerdo, de la cantidad de bienes, deudas, documentos y trámites pendientes. Si hay acuerdo, la sucesión puede adelantarse ante notaría; si no lo hay, normalmente debe tramitarse ante un juez, lo que suele tomar más tiempo. Ahora bien, la acción de petición de herencia prescribe en 10 años.",
     value: "item-3",
   },
   {
     question: "¿Cuáles son los 4 elementos esenciales de un contrato?",
-    answer: "En Colombia, los cuatro elementos esenciales para que una persona se obligue por un contrato son: capacidad legal, consentimiento libre de vicios, objeto lícito y causa lícita. Si falta uno de estos elementos, el contrato puede verse afectado en su validez.",
+    answer:
+      "En Colombia, los cuatro elementos esenciales para que una persona se obligue por un contrato son: capacidad legal, consentimiento libre de vicios, objeto lícito y causa lícita. Si falta uno de estos elementos, el contrato puede verse afectado en su validez.",
     value: "item-4",
   },
   {
-    question:
-      "¿Cuáles son los tipos de custodia en Colombia?",
-    answer: "En Colombia, cuando se habla de custodia de menores, normalmente se hace referencia a la custodia y cuidado personal del niño, niña o adolescente. En la práctica, la custodia puede definirse por mutuo acuerdo entre los padres mediante conciliación, por decisión de una autoridad administrativa en un proceso de restablecimiento de derechos, o por decisión judicial de un juez de familia. Además, en los conflictos de custodia pueden establecerse esquemas como custodia exclusiva o custodia compartida, siempre atendiendo al interés superior del menor.",
+    question: "¿Cuáles son los tipos de custodia en Colombia?",
+    answer:
+      "En Colombia, cuando se habla de custodia de menores, normalmente se hace referencia a la custodia y cuidado personal del niño, niña o adolescente. En la práctica, la custodia puede definirse por mutuo acuerdo entre los padres mediante conciliación, por decisión de una autoridad administrativa en un proceso de restablecimiento de derechos, o por decisión judicial de un juez de familia. Además, en los conflictos de custodia pueden establecerse esquemas como custodia exclusiva o custodia compartida, siempre atendiendo al interés superior del menor.",
     value: "item-5",
   },
 ];
 
 export const FAQSection = () => {
   return (
-    <section id="faq" className="container md:w-[700px] py-24 sm:py-32">
-      <div className="text-center mb-8">
-        <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
+    <section id="faq" className="container max-w-3xl py-10 sm:py-12">
+      <div className="mb-6 text-center">
+        <Badge
+          variant="outline"
+          className="mb-4 border-[#daba8a]/35 bg-white/10 px-4 py-2 text-sm text-[#48101e] backdrop-blur-sm"
+        >
           Preguntas y Respuestas
-        </h2>
+        </Badge>
 
-        <h2 className="text-3xl md:text-4xl text-center font-bold">
+        <h2 className="text-3xl font-bold md:text-4xl">
           Preguntas Frecuentes
         </h2>
       </div>
 
-      <Accordion type="single" collapsible className="AccordionRoot">
+      <Accordion type="single" collapsible className="w-full">
         {FAQList.map(({ question, answer, value }) => (
           <AccordionItem key={value} value={value}>
             <AccordionTrigger className="text-left">
               {question}
             </AccordionTrigger>
-
             <AccordionContent>{answer}</AccordionContent>
           </AccordionItem>
         ))}

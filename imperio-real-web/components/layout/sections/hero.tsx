@@ -11,7 +11,7 @@ export const HeroSection = () => {
       id="inicio"
       className="relative overflow-hidden pt-10 md:pt-14"
     >
-      <div className="relative min-h-[92vh] overflow-hidden rounded-[2.5rem] bg-[#48101e]">
+      <div className="relative min-h-[82vh] overflow-hidden rounded-[2.5rem] bg-[#48101e]">
         {/* Fondo */}
         <div className="absolute inset-0">
           <div
@@ -25,7 +25,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Contenido */}
-        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl items-center justify-center px-6 py-16 text-center md:px-10">
+         <div className="relative z-10 mx-auto flex min-h-[82vh] max-w-6xl items-center justify-center px-6 py-16 text-center md:px-10">
           <div className="max-w-4xl space-y-8">
             <Badge
               variant="outline"
