@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "Imperio Real | Servicios inmobiliarios y jurídicos",
   description:
     "Imperio Real ofrece acompañamiento profesional en servicios inmobiliarios y jurídicos, con atención cercana, estratégica y confiable.",
+  icons: {
+    icon: "/icon.jpg",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({

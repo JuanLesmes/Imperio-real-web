@@ -42,8 +42,8 @@ export const HeroSection = () => {
             <div className="space-y-5">
               <h1 className="font-[var(--font-title)] text-4xl font-bold leading-tight text-white md:text-6xl">
                 Respaldo jurídico e inmobiliario
-                <span className="mt-2 block text-[#daba8a]">
-                  para decisiones importantes
+                <span className="mt-2 block text-white">
+                  para <span className="text-[#daba8a]">decisiones</span> importantes
                 </span>
               </h1>
 

@@ -15,7 +15,7 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: "Asesoría inmobiliaria",
+    title: "Asesoría inmobiliaria y propiedad horizontal",
     description:
       "Acompañamiento en procesos de arriendo, negociación y gestión de inmuebles, con enfoque estratégico y respaldo profesional.",
     icon: <Building2 className="h-6 w-6 text-primary" />,
